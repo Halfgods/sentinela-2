@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sentinela - Login</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    main {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1dc962",
+            "background-light": "#f6f8f7",
+            "background-dark": "#112117",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+  <div
+    class="relative min-h-screen w-full flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
+    style='background-image: linear-gradient(rgba(17, 33, 23, 0.8), rgba(17, 33, 23, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuATWPywukdLI1z99hbzd1DcRUlkbVG_uov04srH-Boqby4KZn-PoHH21_oikrN0wEyOsOMjC_wJbEtSEgbI6zAa1dF_cnttSnvn7OFnmANIl12r4hjRm_iNfiRMu1DHQ6kcHyboQOhk6B7RB-oKjVZRV8jQjokn3layIvb4GQQpWaUw_K40zRRGJvX4z9nxgZLMzkbxF1PkAlaivZYmlHjPxSUm0_FMQZN9a3GNHhyFnuTl7cpMAa8FOrkl4YEFaaCE4Dku1umItLAP");'>
+    <div class="w-full max-w-md flex flex-col">
+      <header class="flex flex-col items-center justify-center mb-8 text-white">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-5xl">emergency_home</span>
+          <h1 class="text-4xl font-bold">Sentinela</h1>
+        </div>
+        <p class="text-white/80">Rockfall Prediction System</p>
+      </header>
+      <main class="w-full bg-background-light/5 dark:bg-background-dark/20 backdrop-blur-sm p-8 rounded-xl shadow-2xl">
+        <form class="flex flex-col gap-6" id="loginform">
+          <div class="flex flex-col gap-1.5">
+            <label class="text-sm font-medium text-white/80 dark:text-white/70" for="username">Username/Email</label>
+            <input
+              class="form-input w-full rounded-lg border-white/20 bg-white/5 focus:ring-primary focus:border-primary text-white placeholder:text-white/50 py-3 px-4 transition-colors duration-300"
+              id="username" placeholder="Enter your username or email" type="text" required />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-sm font-medium text-white/80 dark:text-white/70" for="password">Password</label>
+            <input
+              class="form-input w-full rounded-lg border-white/20 bg-white/5 focus:ring-primary focus:border-primary text-white placeholder:text-white/50 py-3 px-4 transition-colors duration-300"
+              id="password" placeholder="Enter your password" type="password" required />
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                class="form-checkbox h-4 w-4 rounded border-white/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark"
+                type="checkbox" checked />
+              <span class="text-white/80 dark:text-white/70">Remember Me</span>
+            </label>
+            <a class="font-medium text-primary hover:underline" href="#">Forgot Password?</a>
+          </div>
+          <button
+            class="w-full bg-primary text-background-dark font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors duration-300"
+            type="submit">
+            Login
+          </button>
+        </form>
+      </main>
+      <footer class="mt-8 text-center text-xs text-white/60 dark:text-white/50">
+        <p>© 2025 Sentinela – Rockfall Prediction System | Smart India Hackathon Project</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginform");
+
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+
+      if (username === "admin@mine.com") {
+        location.href = "./02_adminDashboard.html";
+      }
+      else if(username === "supervisor@mine.com"){
+        location.href = "./04_supervisorDashboard.html";
+      }
+      else if(username === "manager@mine.com"){
+        location.href = "./06_projMangDashboard.html";
+      }
+       else {
+        alert("Invalid username or password. Please try again.");
+      }
+    };
+  </script>
+
+</body>
+
+</html>

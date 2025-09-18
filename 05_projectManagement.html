@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1dc962",
+            "background-light": "#f6f8f7",
+            "background-dark": "#112117",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        },
+      },
+    };
+  </script>
+  <title>project Managers</title>
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="relative flex min-h-screen w-full flex-col">
+    <header
+      class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-10 py-3">
+      <div class="flex items-center gap-4 text-black dark:text-white">
+        <div class="size-6 text-primary">
+          <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"
+              fill-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h2 class="text-lg font-bold">Sentinela</h2>
+      </div>
+      <!-- <nav class="hidden md:flex flex-1 justify-center gap-8">
+        <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+          href="#">Dashboard</a>
+        <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+          href="#">Reports</a>
+        <a class="text-sm font-bold text-primary" href="#">Supervisors</a>
+        <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+          href="#">Incidents</a>
+        <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+          href="#">Settings</a>
+      </nav> -->
+      <div class="flex items-center gap-4">
+        <button
+          class="flex items-center justify-center rounded-full size-10 bg-primary/10 hover:bg-primary/20 transition-colors text-black/80 dark:text-white/80 dark:bg-primary/20 dark:hover:bg-primary/30">
+          <span class="material-symbols-outlined text-xl"> notifications </span>
+        </button>
+        <div class="size-10 rounded-full bg-cover bg-center"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPojYfhb0sFcQXKS100FFCqd5T-dNJkuOKsB7L82qDlwTnykbHq97G8cdh7e1-jTdB2az0i0aAydNCQMTj49C2Bq-XWHmPh8Y0Q12o88YlTk4Rr7yRW_LSd670zhX28ZSuuPNkTMfa_MmhT0Lu68NRMAjNurcOODcv-i4RBRVi-us59Jg6kEU3uygaoIxxRYDJedLmRR25RkNwYorVx6PDbKw7uwFRgw1LnSiTAym9NB_66v3ykuznExhrkxC0zJjTApacp_HmDZ6k");'>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
+          <h1 class="text-3xl font-bold text-black dark:text-white">Supervisors</h1>
+          <button
+            class="flex items-center justify-center gap-2 rounded-lg bg-primary text-white px-4 py-2 text-sm font-medium shadow-sm hover:bg-primary/90 transition-colors">
+            <span class="material-symbols-outlined"> add </span>
+            <span>Add Project Managers</span>
+          </button>
+        </div>
+        <div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm p-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="relative col-span-1 md:col-span-2">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-black/40 dark:text-white/40">
+                search </span>
+              <input
+                class="w-full pl-10 pr-4 py-2 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 focus:ring-2 focus:ring-primary focus:border-primary text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40"
+                placeholder="Search project manager by name or contact..." type="text" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <button
+                  class="w-full flex items-center justify-between rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 px-4 py-2 text-sm text-black dark:text-white">
+                  <span>Status</span>
+                  <span class="material-symbols-outlined text-lg"> expand_more </span>
+                </button>
+              </div>
+              <div>
+                <button
+                  class="w-full flex items-center justify-between rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 px-4 py-2 text-sm text-black dark:text-white">
+                  <span>Assigned Site</span>
+                  <span class="material-symbols-outlined text-lg"> expand_more </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-primary/20 dark:divide-primary/30">
+              <thead>
+                <tr>
+                  <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-black dark:text-white sm:pl-0"
+                    scope="col">Name</th>
+                  <th class="px-3 py-3.5 text-left text-sm font-semibold text-black dark:text-white" scope="col">Contact
+                  </th>
+                  <th class="px-3 py-3.5 text-left text-sm font-semibold text-black dark:text-white" scope="col">
+                    Assigned Sites</th>
+                  <th class="px-3 py-3.5 text-left text-sm font-semibold text-black dark:text-white" scope="col">Status
+                  </th>
+                  <th class="px-3 py-3.5 text-left text-sm font-semibold text-black dark:text-white" scope="col">
+                    Notify
+                  </th>
+                  <th class="relative py-3.5 pl-3 pr-4 sm:pr-0" scope="col">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-primary/10 dark:divide-primary/20">
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black dark:text-white sm:pl-0">
+                    Ethan Carter</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">
+                    ethan.carter@example.com</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">Site A, Site B</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm">
+                    <span
+                      class="inline-flex items-center rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">Active</span>
+                  </td>
+                  <td></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a class="text-primary hover:text-primary/80" href="#">Edit</a><span
+                      class="mx-2 text-black/20 dark:text-white/20">|</span><a class="text-red-500 hover:text-red-400"
+                      href="#">Remove</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black dark:text-white sm:pl-0">
+                    Olivia Bennett</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">
+                    olivia.bennett@example.com</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">Site C</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm">
+                    <span
+                      class="inline-flex items-center rounded-full bg-black/10 dark:bg-white/10 px-2.5 py-0.5 text-xs font-medium text-black/60 dark:text-white/60">Inactive</span>
+                  </td>
+                  <td></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a class="text-primary hover:text-primary/80" href="#">Edit</a><span
+                      class="mx-2 text-black/20 dark:text-white/20">|</span><a class="text-red-500 hover:text-red-400"
+                      href="#">Remove</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black dark:text-white sm:pl-0">
+                    Noah Thompson</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">
+                    noah.thompson@example.com</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">Site A</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm">
+                    <span
+                      class="inline-flex items-center rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">Active</span>
+                  </td>
+                  <td></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a class="text-primary hover:text-primary/80" href="#">Edit</a><span
+                      class="mx-2 text-black/20 dark:text-white/20">|</span><a class="text-red-500 hover:text-red-400"
+                      href="#">Remove</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black dark:text-white sm:pl-0">
+                    Ava Rodriguez</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">
+                    ava.rodriguez@example.com</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">Site B, Site C</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm">
+                    <span
+                      class="inline-flex items-center rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">Active</span>
+                  </td>
+                  <td></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a class="text-primary hover:text-primary/80" href="#">Edit</a><span
+                      class="mx-2 text-black/20 dark:text-white/20">|</span><a class="text-red-500 hover:text-red-400"
+                      href="#">Remove</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black dark:text-white sm:pl-0">
+                    Liam Walker</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">
+                    liam.walker@example.com</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-black/60 dark:text-white/60">Site A, Site B, Site
+                    C</td>
+                  <td class="whitespace-nowrap px-3 py-4 text-sm">
+                    <span
+                      class="inline-flex items-center rounded-full bg-black/10 dark:bg-white/10 px-2.5 py-0.5 text-xs font-medium text-black/60 dark:text-white/60">Inactive</span>
+                  </td>
+                  <td></td>
+                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    <a class="text-primary hover:text-primary/80" href="#">Edit</a><span
+                      class="mx-2 text-black/20 dark:text-white/20">|</span><a class="text-red-500 hover:text-red-400"
+                      href="#">Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>
